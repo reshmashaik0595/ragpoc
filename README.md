@@ -1,4 +1,4 @@
-# RAG POC
+# AIML - Generative AI - RAG POC
 
 ## Description
 
@@ -29,13 +29,16 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
 # Run LLM Provider
-ollama run
+ollama serve
 
 # Run Ollama Model
 ollama run mistral
 
 # Run the Streamlit app
 streamlit run app.py
+
+# Run the application
+http://localhost:8501/
 
 ```
 
@@ -51,7 +54,8 @@ python chroma_cli.py delete <_id>       # Delete docs by IDs
 
 python chroma_cli.py delete             # Delete all
 
-python chroma_cli.py list_collections   # List all collection names
+
+  # List all collection names
 
 ```
 
