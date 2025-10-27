@@ -1,20 +1,22 @@
-# AIML - Generative AI - RAG POC
+# 🚀 AIML - Generative AI - Retrieval-Augmented Generation (RAG) POC
 
-## Description
+## 📌 Overview
 
-**RAG POC** is a Proof of Concept that integrates **Retrieval-Augmented Generation (RAG)** with a **Large Language Model (LLM)** to enhance information retrieval and response generation. This project combines the power of Mistral LLM with components like Ollama, ChromaDB, and a Streamlit frontend for interactive exploration.
+This **Proof of Concept (POC)** demonstrates **Retrieval-Augmented Generation (RAG)** using a local **Large Language Model (LLM)** for enhanced information retrieval and intelligent responses. The system integrates **Mistral LLM** with **Ollama**, **ChromaDB**, and a **Streamlit** user interface to enable interactive exploration of knowledge bases.
 
-## Technologies Used
+## 🧠 Key Technologies
 
-- **Python** – Core programming language
-- **Streamlit** – Web UI framework for building interactive apps
-- **Ollama** – Framework to run and manage LLMs locally
-- **Mistral** – Open-weight language model used in the backend
-- **ChromaDB** – Vector database for semantic search and retrieval
+| Technology  | Purpose |
+|-------------|---------|
+| **Python**  | Core programming language |
+| **Streamlit** | Interactive web UI framework |
+| **Ollama**  | Local LLM runtime and management |
+| **Mistral** | Open-weight language model powering generation |
+| **ChromaDB** | Vector database for semantic search and document retrieval |
 
-## Installation
+## ⚙️ Installation & Setup
 
-To set up and run the project, use the following commands:
+Follow the steps below to install and run the RAG POC:
 
 ```bash
 # Clone the repository
@@ -27,44 +29,57 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
-
-# Run LLM Provider
-ollama serve
-
-# Run Ollama Model
-ollama run mistral
-
-# Run the Streamlit app
-streamlit run app.py
-
-# Run the application
-http://localhost:8501/
-
 ```
 
-## ChromaDB Commands
+### 🔧 Configure Environment Variables
+
+Create a `.env` file in the project root with the following values:
+
+```env
+EMBEDDING_MODEL=all-MiniLM-L6-v2
+CHROMA_DB_PATH=./chroma_db
+OLLAMA_URL=http://127.0.0.1:11434/api/generate
+OLLAMA_MODEL=mistral
+```
+
+### ▶️ Run the Application
 
 ```bash
+# Start Ollama service
+ollama serve
 
-python chroma_cli.py list               # List documents with embeddings (default: 10)
+# Run the Mistral model
+ollama run mistral
 
-python chroma_cli.py list_docs <count>  # List only documents (default: 10)
-
-python chroma_cli.py delete <_id>       # Delete docs by IDs
-
-python chroma_cli.py delete             # Delete all
-
-
-  # List all collection names
-
+# Launch Streamlit app
+streamlit run app.py
 ```
 
-## Reference Links
+Open your browser and navigate to:
 
-- [Python](https://www.python.org/)
-- [Streamlit](https://streamlit.io/)
-- [Ollama](https://ollama.com/)
-- [Mistral](https://mistral.ai/news/announcing-mistral-7b/)
-- [ChromaDB](https://www.trychroma.com/)
+```
+http://localhost:8501/
+```
 
+## 🗂️ ChromaDB CLI Commands
 
+```bash
+python chroma_cli.py list               # List documents with embeddings (default: 10)
+python chroma_cli.py list_docs <count>  # List only document names (default: 10)
+python chroma_cli.py delete <_id>       # Delete documents by ID
+python chroma_cli.py delete             # Delete all documents
+```
+
+## 🔗 Reference Links
+
+- **Python**: https://www.python.org/
+- **Streamlit**: https://streamlit.io/
+- **Ollama**: https://ollama.com/
+- **Mistral LLM**: https://mistral.ai/news/announcing-mistral-7b/
+- **ChromaDB**: https://www.trychroma.com/
+
+## ✅ Summary
+
+This POC delivers a local and efficient RAG pipeline using open-source technologies, enabling high-performance knowledge retrieval integrated with intelligent LLM-based response generation.
+
+> 💡 Ideal for experimentation, enterprise prototyping, and AI solution development using local resources.
