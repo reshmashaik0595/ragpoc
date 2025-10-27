@@ -6,7 +6,6 @@ import os
 load_dotenv()
 
 chroma_client = chromadb.PersistentClient(path=os.getenv("CHROMA_DB_PATH"))
-
 embedding_fn = SentenceTransformerEmbeddingFunction(model_name=os.getenv("EMBEDDING_MODEL"))
 
 collection = chroma_client.get_or_create_collection(
