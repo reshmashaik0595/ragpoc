@@ -1,4 +1,4 @@
-# 🚀 AIML - Generative AI - Retrieval-Augmented Generation (RAG) POC
+# 🚀 AIML - ..Generative AI - Retrieval-Augmented Generation (RAG) POC
 
 ## 📌 Overview
 
